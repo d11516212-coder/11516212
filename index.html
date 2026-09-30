@@ -10,9 +10,15 @@
 <body>
   <main class="app">
     <header class="app-header">
-      <p class="eyebrow">DAILY NOTES</p>
-      <h1>待辦清單<span class="title-mark" aria-hidden="true">.</span></h1>
-      <p class="subtitle">把要做的事，一件一件完成。</p>
+      <div class="header-copy">
+        <p class="eyebrow">DAILY NOTES</p>
+        <h1>待辦清單<span class="title-mark" aria-hidden="true">.</span></h1>
+        <p class="subtitle">把要做的事，一件一件完成。</p>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+        <span id="theme-icon" aria-hidden="true">☾</span>
+        <span id="theme-label">深色</span>
+      </button>
     </header>
 
     <form id="todo-form" class="todo-form" autocomplete="off">
@@ -27,6 +33,12 @@
       >
       <button class="add-button" type="submit"><span aria-hidden="true">＋</span> 新增</button>
     </form>
+
+    <div class="filters" role="group" aria-label="篩選待辦事項">
+      <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">全部</button>
+      <button class="filter-button" type="button" data-filter="active" aria-pressed="false">未完成</button>
+      <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">已完成</button>
+    </div>
 
     <section class="list-section" aria-label="待辦事項">
       <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
